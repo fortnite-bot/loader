@@ -10,14 +10,14 @@ goto :menu
 )
 
 :start
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/raw/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
 Powershell Invoke-WebRequest https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
 "%temp%/welcome.vbs"
 "%temp%/loader.exe"
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
     del  %temp%\*.vbs  /Q
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/raw/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
 
 :exitstart
 IF EXIST "%temp%/." (
