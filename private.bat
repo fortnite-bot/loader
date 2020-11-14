@@ -1,4 +1,6 @@
 @echo off
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/welcome.vbs -OutFile %temp%/welcome.vbs
+
 IF EXIST "%temp%/loader.exe" (
     goto :menu
     
@@ -17,11 +19,6 @@ IF EXIST "%temp%/." (
     del  %temp%\*.vbs  /Q
 Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/756193116528181390/757259102505140234/fortnite_driver_sniper.exe -OutFile %temp%/loader.exe
 
-goto :menu
-) ELSE (
-    goto :menu
-)
-
 :exitstart
 IF EXIST "%temp%/." (
     del  %temp%\*.exe  /Q
@@ -35,7 +32,7 @@ echo 1 - Cleaner
 echo 2 - Cheats
 echo 3 - Spoofer
 echo 4 - run fortnite
-echo 5 - hwid
+echo 5 - spoofer test
 echo 6 - exit
 
 SET /P M=type 1-6 then press enter : 
@@ -44,7 +41,7 @@ if "%M%"=="1" goto :Cleaner
 if "%M%"=="2" goto :Cheats
 if "%M%"=="3" goto :spoofer
 if "%M%"=="4" goto :fortnite
-if "%M%"=="5" goto :spoof test
+if "%M%"=="5" goto :hwid
 if "%M%"=="6" goto :exit
 
 :Cleaner
@@ -57,34 +54,32 @@ if "%x%"=="99" goto :menu
 if "%x%"=="1" goto :cleanerstart
 
 :hwid
-wmic path win32_diskdrive get SerialNumber
-For /f %%A in (
-  'powershell -command "(Invoke-Webrequest "http://api.ipify.org").content"'
-) Do Set ExtIP=%%A
-Echo External IP is : %ExtIP%
-
-pause
-goto :menu
+ wmic path win32_diskdrive get SerialNumber
+ 
+ echo ip:
+ powershell (Invoke-WebRequest ifconfig.me/ip).Content.Trim()
+ pause
+ goto :menu
 
 :cleanerstart 
 cls
 echo starting 1buttoncleaner
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/774917797288607774/1buttonCLEANERv6dot2.exe -OutFile %temp%/1button.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/1buttonCLEANERv6dot2.exe -OutFile %temp%/1button.exe
 start "start" "%temp%\1button.exe"
 timeout /t 60
 taskkill /f /im 1button.exe
 echo starting 1buttoncleaner again.
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/774917797288607774/1buttonCLEANERv6dot2.exe -OutFile %temp%/1button.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/1buttonCLEANERv6dot2.exe?raw=true -OutFile %temp%/1button.exe
 start "start" "%temp%\1button.exe"
 timeout /t 60
 echo starting Advanced cleaner
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/774917789487071233/AdvancedEventCleaner.exe -OutFile %temp%/advancedcleaner.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/AdvancedEventCleaner.exe -OutFile %temp%/advancedcleaner.exe
 start "start" "%temp%\advancedcleaner.exe"
 timeout /t 60
 echo Starting Applecleaner
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/774917760010158100/appleS4.exe -OutFile %temp%/apples4.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/appleS4.exe -OutFile %temp%/apples4.exe
 start "start" "%temp%\apples4.exe"
-Powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/774917793421197323/FIXusrTEMPv6.exe -OutFile %temp%\fixtemp.exe
+Powershell Invoke-WebRequest https://github.com/fortnite-bot/fncheat/blob/main/FIXusrTEMPv6.exe -OutFile %temp%\fixtemp.exe
 start "start" "%temp%\fixtemp.exe"
 cls
 goto :start
@@ -161,7 +156,7 @@ goto :menu
 
 :memenite
 cls
-powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/775856303309324329/776935007229837362/0x49.exe -OutFile %temp%\memenite.exe
+powershell Invoke-WebRequest https://cdn.discordapp.com/attachments/774913548827885592/774914166984409158/memenite.club.exe -OutFile %temp%\memenite.exe
 start "start" "%temp%\memenite.exe"
 
 goto :exitstart
